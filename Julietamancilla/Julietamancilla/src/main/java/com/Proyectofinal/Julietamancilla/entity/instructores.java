@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 
 @Entity
-@Table(name = "instructores")
+@Table(name = "instructor")
 public class instructores extends Entidad {
 
     @Column(name = "nombre")

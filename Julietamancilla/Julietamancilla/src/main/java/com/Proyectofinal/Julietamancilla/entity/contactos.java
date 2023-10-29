@@ -1,7 +1,5 @@
 package com.Proyectofinal.Julietamancilla.entity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,15 +19,19 @@ public class contactos extends Entidad{
     private String telefono;
 
     @Column(name = "direccion")
-    private LocalDate direccion;
+    private String direccion;
 
     @Column(name = "ciudad")
-    private LocalDate ciudad;
+    private String ciudad;
 
     @Column(name = "provincia")
-    private LocalDate provincia;
+    private String provincia;
 
     @Column(name = "codigo_postal")
-    private LocalDate codigoPostal;
+    private String codigoPostal;
+    @OneToOne(cascade = CascadeType.ALL)
+
+    @JoinColumn(name = "id_estudiante")
+    private estudiantes estudiante;
 
 }

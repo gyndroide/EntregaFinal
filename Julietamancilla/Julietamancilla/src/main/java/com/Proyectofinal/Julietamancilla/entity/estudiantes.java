@@ -25,16 +25,11 @@ public class estudiantes extends Entidad {
     private LocalDate fechaNacimiento;
 
 
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_contacto")
-    private contactos contacto;
-
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "estudiante_curso",
-            joinColumns = @JoinColumn(name = "estudiante_id"),
-            inverseJoinColumns = @JoinColumn(name = "curso_id"))
-    private List<cursos> calificaciones = new ArrayList<>();
+            joinColumns = @JoinColumn(name = "id_estudiante"),
+            inverseJoinColumns = @JoinColumn(name = "id_curso"))
+    private List<cursos> cursos = new ArrayList<>();
 
 }
 

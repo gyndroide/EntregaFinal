@@ -20,7 +20,7 @@ public class cursos extends Entidad {
     private String nombre;
 
     @ManyToOne
-    @JoinColumn(name = "fk_instructor")
+    @JoinColumn(name = "id_instructor")
     private instructores instructor;
 
 }
